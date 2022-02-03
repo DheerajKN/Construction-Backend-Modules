@@ -2,15 +2,16 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<artifactId>server</artifactId>
+	<packaging>war</packaging>
+	<name>Server Layer</name>
+	<description>Server Layer of the project</description>
+
 	<parent>
 		<groupId>com.dheeraj.startup</groupId>
 		<artifactId>Construction-Backend-Modules</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>server</artifactId>
-	<packaging>war</packaging>
-	<name>Server Layer</name>
-	<description>Server Layer of the project</description>
 
 	<dependencies>
 		<dependency>
@@ -24,4 +25,19 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<finalName>construction-server</finalName>
+		<plugins>
+			<plugin>
+				<!-- Expose classes so other projects can use the files as a library, such as dbtests module using DAL -->
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<attachClasses>true</attachClasses>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
