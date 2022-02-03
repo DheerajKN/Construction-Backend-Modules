@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>server</artifactId>
 	<packaging>war</packaging>
-	<name>Server Layer</name>
+	<name>server</name>
 	<description>Server Layer of the project</description>
 
 	<parent>
